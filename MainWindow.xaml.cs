@@ -67,7 +67,7 @@ namespace GUI_notconsole_HARD
         {
 
             // Lese den Text String der Textbox aus und tausche . zu ,
-            string replace = Regex.Replace((this.valuetoconvert.Text), @"\.|[a-zA-Z;:_!§$%&/()=?*+'#üäö<>^°´`´ß-]|[ ]", "");
+            string replace = Regex.Replace((this.valuetoconvert.Text), @"\.|[a-zA-Z;:_!§$%&/()=?*+'#üäö<>^°´`´ß""-]|[ ]", "");
             // Setze den so bereinigten Text zurück in die Textbox
             this.valuetoconvert.Text = replace;
             //Setze den Courser ans Ende des bereinigten Strings in der Textbox
