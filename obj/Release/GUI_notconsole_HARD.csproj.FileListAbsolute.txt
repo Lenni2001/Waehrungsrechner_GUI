@@ -1,0 +1,16 @@
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\bin\Release\GUI_notconsole_HARD.exe.config
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\bin\Release\GUI_notconsole_HARD.exe
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\bin\Release\GUI_notconsole_HARD.pdb
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.csproj.AssemblyReference.cache
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.csproj.SuggestedBindingRedirects.cache
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\MainWindow.g.cs
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\App.g.cs
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD_MarkupCompile.cache
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD_MarkupCompile.lref
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\MainWindow.baml
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.g.resources
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.Properties.Resources.resources
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.csproj.GenerateResource.cache
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.csproj.CoreCompileInputs.cache
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.exe
+C:\Users\lennartsturm\source\repos\GUI_notconsole_HARD\obj\Release\GUI_notconsole_HARD.pdb

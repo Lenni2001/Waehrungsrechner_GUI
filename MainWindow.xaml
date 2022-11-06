@@ -1,0 +1,47 @@
+﻿<Window x:Class="GUI_notconsole_HARD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI_notconsole_HARD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <ComboBox x:Name="fromcurrency_combobox" HorizontalAlignment="Left" Margin="180
+                  ,173,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="EUR"/>
+            <ComboBoxItem Content="USD"/>
+            <ComboBoxItem Content="JPY"/>
+            <ComboBoxItem Content="GBP"/>
+            <ComboBoxItem Content="AUD"/>
+            <ComboBoxItem Content="CAD"/>
+            <ComboBoxItem Content="CHF"/>
+            <ComboBoxItem Content="HKD"/>
+            <ComboBoxItem Content="KRW"/>
+            <ComboBoxItem Content="XAU"/>
+        </ComboBox>
+
+        <ComboBox x:Name="tocurrency_combobox" HorizontalAlignment="Left" Margin="350,173,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="1">
+            <ComboBoxItem Content="EUR"/>
+            <ComboBoxItem Content="USD"/>
+            <ComboBoxItem Content="JPY"/>
+            <ComboBoxItem Content="GBP"/>
+            <ComboBoxItem Content="AUD"/>
+            <ComboBoxItem Content="CAD"/>
+            <ComboBoxItem Content="CHF"/>
+            <ComboBoxItem Content="HKD"/>
+            <ComboBoxItem Content="KRW"/>
+            <ComboBoxItem Content="XAU"/>
+        </ComboBox>
+        <TextBox x:Name="valuetoconvert" HorizontalAlignment="Left" Margin="29,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="Default" TextChanged="valuetoconvert_TextChanged" Height="22"/>
+        <Button x:Name="convert_button" Content="CONVERT" HorizontalAlignment="Left" Margin="270,321,0,0" VerticalAlignment="Top" Height="31" Width="170" Click="convert_button_Click"/>
+        <TextBox x:Name="Ergebnis_Textbox" IsReadOnly="True" HorizontalAlignment="Left" Margin="490,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="22" MaxLength="5"/>
+        <TextBox x:Name="log_textbox" Margin="642,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="434" IsReadOnly="True" VerticalScrollBarVisibility="Auto" AllowDrop="False" HorizontalScrollBarVisibility="Auto"/>
+        <Button x:Name="swap_button" Content="&lt;-->" HorizontalAlignment="Left" Margin="310.5,174,0,0" VerticalAlignment="Top" Click="swap_button_Click"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dies ist ein Rechner, der eine Währung in eine andere konvertiert." VerticalAlignment="Top" Height="18" Width="790" Margin="0,0,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Kommazahlen werden nur im mit einem &quot;,&quot; akzeptiert und nicht mit einem &quot;.&quot;." VerticalAlignment="Top" Height="15" Width="790" Margin="0,48,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Eingaben sind möglich, solange sie im Bereich der double Variable liegen." VerticalAlignment="Top" Height="21" Width="790" Margin="0,64,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,16,174,0" TextWrapping="Wrap" Text="Eingaben werden nur akzeptiert, wenn sie mit Zahlen erfolgen. Sollte man nichts oder eine ungültige Eingabe vornehmen wird automatisch eine Null eingefügt." VerticalAlignment="Top" Height="32" Width="600"/>
+    </Grid>
+
+</Window>
