@@ -3,6 +3,8 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace GUI_notconsole_HARD
 {
@@ -18,6 +20,11 @@ namespace GUI_notconsole_HARD
         {
             Application.Current.Shutdown();         //Shutdown Button
         }
+        
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Windows[0].WindowState = WindowState.Minimized;
+        }
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
@@ -26,7 +33,7 @@ namespace GUI_notconsole_HARD
         }
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();      //Standard
 
         }
 
@@ -76,6 +83,7 @@ namespace GUI_notconsole_HARD
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
+            // Alles Variablen auf Null setzen
             this.valuetoconvert.Text = "";
             this.Ergebnis_Textbox.Text = "";
             this.log_textbox.Text = "";
@@ -83,6 +91,12 @@ namespace GUI_notconsole_HARD
             fromCurrency = -1;
             fromcurrency_combobox.SelectedIndex = 0;
             tocurrency_combobox.SelectedIndex = 1;
+        }
+
+        private void valuetoconvert_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.valuetoconvert.Text = "";
+
         }
     }
 }

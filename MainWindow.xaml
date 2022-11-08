@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:GUI_notconsole_HARD"
         mc:Ignorable="d"
-        Title="Währungsrechner" Height="800" Width="550"
+        Title="Währungsrechner" Height="800" Width="550" Icon="/Images/favicon.ico"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -19,19 +19,28 @@
         WindowStartupLocation="CenterScreen">
 
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+        <!-- Aussehen des Fenster -->
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
-            <Grid>
+            <!-- Aussehen des Fensters -->
+            <Grid><Viewbox  />
+
+                <!-- Ordnet Inhalt-->
                 <materialDesign:PopupBox Margin="440,25,0,690" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                     <StackPanel>
                         <Button x:Name="Clear" ToolTip="Clears everything!" Content="Clear" Click="Clear_Click" />
+                        <Button x:Name="Minimize" ToolTip="Minimizes the programme!" Content="Minimize" Click="Minimize_Click" />
                         <Button x:Name="Btn_Exit" ToolTip="Close Application" Content="Exit Application" Click="exitApp"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
-                <TextBlock Margin="132,50,132,660" TextAlignment="Center">
+                
+
+
+
+                <TextBlock Margin="132,175,132,525" TextAlignment="Center">
             <Hyperlink IsEnabled="False" Style="{StaticResource MaterialDesignHeadline5Hyperlink}" >Exchange Rate</Hyperlink>
                 </TextBlock>
 
-                <ComboBox  x:Name="fromcurrency_combobox" Margin="20,250,325,0" VerticalAlignment="Top" SelectedIndex="0"  Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="FROM">
+                <ComboBox  x:Name="fromcurrency_combobox" Margin="20,400,325,0" VerticalAlignment="Top" SelectedIndex="0"  Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="FROM">
                     <ComboBoxItem Content="EUR"/>
                     <ComboBoxItem Content="USD"/>
                     <ComboBoxItem Content="JPY"/>
@@ -44,7 +53,7 @@
                     <ComboBoxItem Content="XAU"/>
                 </ComboBox>
 
-                <ComboBox   Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="TO" x:Name="tocurrency_combobox" Margin="325,250,20,0" VerticalAlignment="Top" SelectedIndex="1">
+                <ComboBox   Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="TO" x:Name="tocurrency_combobox" Margin="325,400,20,0" VerticalAlignment="Top" SelectedIndex="1">
                     <ComboBoxItem Content="EUR"/>
                     <ComboBoxItem Content="USD"/>
                     <ComboBoxItem Content="JPY"/>
@@ -56,11 +65,13 @@
                     <ComboBoxItem Content="KRW"/>
                     <ComboBoxItem Content="XAU"/>
                 </ComboBox>
-                <TextBox     Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" AcceptsReturn="False" TextWrapping="NoWrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Please type your amount!" x:Name="valuetoconvert" Margin="20,175,20,500" TextChanged="valuetoconvert_TextChanged"/>
-                <Button x:Name="convert_button" Content="CONVERT" materialDesign:ButtonAssist.CornerRadius="10" Margin="20,250,20,326" Height="40" Click="convert_button_Click"/>
-                <TextBlock Style="{StaticResource MaterialDesignHeadline3TextBlock}" x:Name="Ergebnis_Textbox" Margin="0,100,0,600" TextWrapping="Wrap" TextAlignment="Center" FontWeight="UltraBold" FontSize="36"/>
-                <TextBox x:Name="log_textbox" Margin="10,372,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="362" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
-                <Button x:Name="swap_button" Content="&lt;-->" Margin="210,250,210,0"  materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Top" Click="swap_button_Click" Height="48"/>
+                <TextBox     Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalAlignment="Top" AcceptsReturn="False" TextWrapping="NoWrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Please type your amount!" x:Name="valuetoconvert" Margin="20,325,20,50" TextChanged="valuetoconvert_TextChanged" GotFocus="valuetoconvert_GotFocus"/>
+                <Button x:Name="convert_button" Content="CONVERT" materialDesign:ButtonAssist.CornerRadius="10" Margin="20,250,20,32" Height="40" Click="convert_button_Click"/>
+                <TextBlock  Text="0,00$" Style="{StaticResource MaterialDesignHeadline3TextBlock}" x:Name="Ergebnis_Textbox" Margin="0,225,0,450" TextWrapping="Wrap" TextAlignment="Center" FontWeight="UltraBold" FontSize="36"/>
+                <TextBox x:Name="log_textbox" Margin="10,528,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="206" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+                <Button x:Name="swap_button" Content="&lt;-->" Margin="210,400,210,0"  materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Top" Click="swap_button_Click" Height="48"/>
+                <Image Source="/Images/euro.jpg" Width="180" Margin="0,0,0,565"/>
+
             </Grid>
         </materialDesign:DialogHost>
     </materialDesign:Card>
