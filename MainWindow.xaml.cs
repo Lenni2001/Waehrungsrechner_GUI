@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI_notconsole_HARD
 {
@@ -24,18 +14,26 @@ namespace GUI_notconsole_HARD
         double value = 0;           //Standardwerte festlegen
         int fromCurrency = -1;      //Standardwerte festlegen
         int toCurrency = -1;           //Standardwerte festlegen
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();         //Shutdown Button
+        }
 
-
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);      //Fenster verschieben
+            DragMove();
+        }
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void convert_button_Click(object sender, RoutedEventArgs e)
         {
             string[] currency = new string[10] { "EUR", "USD", "JPY", "GBP", "AUD", "CAD", "CHF", "HKD", "KRW", "XAU" };        //Array für Currency Symbole erstellen
             double[] currencytoEUR = new double[10] { 1.00, 1.18, 126.32, 0.9, 1.65, 1.56, 1.08, 9.16, 1400.27, 0.000607 };     //Array für Umrechnungsfaktoren erstellen
-
 
             fromCurrency = this.fromcurrency_combobox.SelectedIndex;        //fromcurrency einlesen
             toCurrency = this.tocurrency_combobox.SelectedIndex;        //tocurrency einlesen
@@ -49,17 +47,18 @@ namespace GUI_notconsole_HARD
                 value = 0;
             }
             double outputValue = (value / currencytoEUR[fromCurrency]) * currencytoEUR[toCurrency];         //Umrechnen
-            
-            this.Ergebnis_Textbox.Text = Convert.ToString(outputValue) + " " + Convert.ToString(currency[toCurrency]);         //Ergebnis ausgeben
-            this.log_textbox.AppendText(valuetoconvert + " " + currency[fromCurrency] + " -> " + outputValue + " " + currency[toCurrency] + Environment.NewLine);       //Ergebnisse Loggen
+
+            this.Ergebnis_Textbox.Text = outputValue.ToString("0.00") + " " + Convert.ToString(currency[toCurrency]);         //Ergebnis ausgeben
+            this.log_textbox.Text += (valuetoconvert + " " + currency[fromCurrency] + " --> " + outputValue.ToString("0.00") + " " + currency[toCurrency] + Environment.NewLine);       //Ergebnisse Loggen
 
 
         }
         private void swap_button_Click(object sender, RoutedEventArgs e)
         {
 
-            (this.fromcurrency_combobox.SelectedIndex, this.tocurrency_combobox.SelectedIndex) = (this.tocurrency_combobox.SelectedIndex, this.fromcurrency_combobox.SelectedIndex);            //Swap-Button funktion, tauschen der combobox untereinander
-            (this.valuetoconvert.Text) = (this.Ergebnis_Textbox.Text);
+            (this.fromcurrency_combobox.SelectedIndex, this.tocurrency_combobox.SelectedIndex) = (this.tocurrency_combobox.SelectedIndex, this.fromcurrency_combobox.SelectedIndex);            //Swap-Button funktion, tauschen der combobox untereinander 
+            (this.valuetoconvert.Text) = (this.Ergebnis_Textbox.Text);          //Swap-Button Funktion, value wird gleich dem ergebnis gesetzt
+            this.Ergebnis_Textbox.Text = "";            //Swap-Button Funktion, Ergebnis wird gecleared
         }
 
 
@@ -73,6 +72,17 @@ namespace GUI_notconsole_HARD
             //Setze den Courser ans Ende des bereinigten Strings in der Textbox
             this.valuetoconvert.CaretIndex = replace.Length;
 
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this.valuetoconvert.Text = "";
+            this.Ergebnis_Textbox.Text = "";
+            this.log_textbox.Text = "";
+            toCurrency = -1;
+            fromCurrency = -1;
+            fromcurrency_combobox.SelectedIndex = 0;
+            tocurrency_combobox.SelectedIndex = 1;
         }
     }
 }
